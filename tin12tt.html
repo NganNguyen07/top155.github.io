@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu mẫu nhập thông tin học sinh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;  
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Thông tin học sinh</h2>
+    <form id="studentForm">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Tuổi:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="class">Lớp học:</label>
+        <select id="class" name="class" required>
+            <option value="12T">Lớp 12T</option>
+            <option value="12TT">Lớp 12TT</option>
+            <option value="12S">Lớp 12S</option>
+            <option value="12SD">Lớp 12SD</option>
+            <option value="12V">Lớp 12V</option>
+            <option value="12L">Lớp 12L</option>
+            <option value="12H">Lớp 12H</option>
+        
+        </select>
+
+        <label for="address">Địa chỉ gmail:</label>
+        <input type="text" id="address" name="address" required>
+
+        <button type="submit">Gửi thông tin</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('studentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const studentClass = document.getElementById('class').value;
+        const address = document.getElementById('address').value;
+
+        alert(`Thông tin học sinh:\nHọ và tên: ${name}\nTuổi: ${age}\nLớp học: ${studentClass}\nĐịa chỉ: ${address}`);
+    });
+</script>
+
+</body>
+</html>
